@@ -13,11 +13,11 @@ public class CreateNewAccount extends BaseTest {
 	public static void CreateAccount() throws InterruptedException {
 		
 		 driver.findElement(By.xpath(loc.getProperty("create-account"))).click();
-		 driver.findElement(By.xpath(loc.getProperty("create-First_name"))).sendKeys("xyz");
-		 driver.findElement(By.xpath(loc.getProperty("create-last-name"))).sendKeys("abc");
-		 driver.findElement(By.xpath(loc.getProperty("create-email-id"))).sendKeys("mmm1@mko.com");
-		 driver.findElement(By.xpath(loc.getProperty("create-password"))).sendKeys("Ppp!12345");
-		 driver.findElement(By.xpath(loc.getProperty("create-password-repeat"))).sendKeys("Ppp!12345");
+		 driver.findElement(By.xpath(loc.getProperty("create-First_name"))).sendKeys("xyz12343");
+		 driver.findElement(By.xpath(loc.getProperty("create-last-name"))).sendKeys("abc123");
+		 driver.findElement(By.xpath(loc.getProperty("create-email-id"))).sendKeys("mmm123@mko.com");
+		 driver.findElement(By.xpath(loc.getProperty("create-password"))).sendKeys("Ppp!123456");
+		 driver.findElement(By.xpath(loc.getProperty("create-password-repeat"))).sendKeys("Ppp!123456");
 		 driver.findElement(By.xpath(loc.getProperty("create-submit-button"))).click();
 		 Thread.sleep(1000);
 	}

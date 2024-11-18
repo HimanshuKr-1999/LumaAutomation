@@ -1,6 +1,7 @@
 package base;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -26,6 +27,7 @@ public class BaseTest {
 	public static FileReader fr;
 	@BeforeSuite
 	public void SetUp() throws IOException {
+		
 		if(driver==null) {
 			
 			System.out.println(System.getProperty("user.dir"));// C:\Users\KIIT\eclipse-workspace-Practice\AutomationProject\com.Automation.Framework.Project
@@ -39,6 +41,7 @@ public class BaseTest {
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.get(prop.getProperty("url"));
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			
 			
 		}

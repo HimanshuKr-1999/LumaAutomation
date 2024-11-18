@@ -1,10 +1,17 @@
 package testcases;
 
+import java.io.File;
+
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.Test;
+import org.apache.commons.io.FileUtils;
+import java.io.IOException;
+
 
 import base.BaseTest;
 
@@ -12,7 +19,7 @@ public class Search_AddToCart extends BaseTest {
 	
 	  //String Product_Color,String Product_Quantity
 	@Test
-	public void SearchAndAddToCart() throws InterruptedException {
+	public void SearchAndAddToCart() throws InterruptedException, IOException {
 		
 		
 		//LoginTest.Login();
@@ -31,10 +38,22 @@ public class Search_AddToCart extends BaseTest {
 		driver.findElement(By.className(loc.getProperty("search-box"))).sendKeys(Pname);
 		driver.findElement(By.className(loc.getProperty("search-box"))).submit();
 		
+		
+		//////////////////////// SCREENSHOT//////////////////////
+		
+		File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+		File destFile1 = new File(".//screenshot/Productscreen.png");
+	    FileUtils.copyFile(screenshotFile1,destFile1);
+	    System.out.println("Screenshot saved successfully.");
+		
+		
+		
+		
 		try {
             driver.findElement(By.xpath(loc.getProperty("product-locator")));
             System.out.println("product is available.");
-		        Thread.sleep(2000);
+		        Thread.sleep(3000);
 		        driver.findElement(By.xpath("(//div[@class='price-box price-final_price'])[1]")).click();
 				driver.findElement(By.xpath(loc.getProperty("product-locator"))).click();
 				System.out.println("Product opened");	
@@ -57,6 +76,12 @@ public class Search_AddToCart extends BaseTest {
 
 		
 	}
+	
+
+	
+	
+	
+	
 //	@Test
 //	public static void main(String args[]) throws InterruptedException {
 //		Search_AddToCart obj1 = new Search_AddToCart();
