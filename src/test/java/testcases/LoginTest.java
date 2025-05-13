@@ -15,7 +15,7 @@ public class LoginTest extends BaseTest {
 	@Test
 	public static void Login() throws InterruptedException {
 		
-		
+		System.out.println("Login start");
 		driver.findElement(By.linkText(loc.getProperty("Sign-In"))).click();
 		
 //		Alert alert = driver.switchTo().alert();

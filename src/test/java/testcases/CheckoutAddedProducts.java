@@ -21,7 +21,8 @@ public class CheckoutAddedProducts extends BaseTest {
 	public void checkout() throws InterruptedException, IOException {
 		
 		
-	
+	    WebElement CartNumber = driver.findElement(By.xpath("//span[@class='counter-number']"));
+	    System.out.println(CartNumber.getText());
 		
 		driver.findElement(By.xpath(loc.getProperty("cart-icon"))).click();
 		driver.findElement(By.xpath(loc.getProperty("proceed-to-checkout"))).click();
@@ -38,7 +39,10 @@ public class CheckoutAddedProducts extends BaseTest {
 			
 			
 			driver.findElement(By.xpath(loc.getProperty("placeorder"))).click();//not clicking..... figuring out this
-			System.out.println("Place order clicked");
+			System.out.println("Place order");
+			String OrderNumber= driver.findElement(By.xpath(loc.getProperty("order-number"))).getText();
+			System.out.println(OrderNumber);
+			
 			
 			
 			
@@ -78,11 +82,11 @@ System.out.println("Screenshot saved successfully.");
 			driver.findElement(By.xpath(loc.getProperty("address-lastname"))).sendKeys("Kumarr");
 			driver.findElement(By.xpath(loc.getProperty("address-street-address-1"))).sendKeys("Hinjewadi");
 			driver.findElement(By.xpath(loc.getProperty("address-city"))).sendKeys("maharashtra");
-			//Thread.sleep(1000);
+			
 			driver.findElement(By.xpath(loc.getProperty("address-state"))).click();
-		//	Thread.sleep(1000);
+		
 			driver.findElement(By.xpath(loc.getProperty("address-state-option-1"))).click();
-		//	Thread.sleep(1000);
+		
 			driver.findElement(By.xpath(loc.getProperty("address-postalcode"))).sendKeys("1223");
 			Thread.sleep(1000);
 			driver.findElement(By.xpath(loc.getProperty("address-telephone"))).sendKeys("12345678");

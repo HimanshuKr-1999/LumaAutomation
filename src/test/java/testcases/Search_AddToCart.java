@@ -64,6 +64,7 @@ public class Search_AddToCart extends BaseTest {
 				driver.findElement(By.xpath(loc.getProperty("product-quantity"))).clear();
 				driver.findElement(By.xpath(loc.getProperty("product-quantity"))).sendKeys("1");
 				driver.findElement(By.id(loc.getProperty("product-add-to-cart-button"))).click();
+				System.out.println("Product added to cart Successfully");
 			}
         catch (NoSuchElementException e) {
             

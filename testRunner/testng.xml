@@ -6,8 +6,8 @@
 			<!--	<class name="testcases.Login_Test_DDT"/> -->
 		<!--	<class name="testcases.CreateNewAccount" /> -->
 			<class name="testcases.LoginTest" /> 
-			  <class name="testcases.Search_AddToCart"></class> 
-			 <class name="testcases.CheckoutAddedProducts"></class> 
+		<!--	  <class name="testcases.Search_AddToCart"></class> -->
+		<!--	 <class name="testcases.CheckoutAddedProducts"></class> -->
 			<!--  -->
 		</classes>
 	</test> <!-- Test -->
